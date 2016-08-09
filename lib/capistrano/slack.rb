@@ -2,7 +2,6 @@ require 'capistrano'
 require 'capistrano/log_with_awesome'
 require 'json'
 require 'net/http'
-require 'active_support/all'
 
 module Capistrano
   module Slack
@@ -57,7 +56,7 @@ module Capistrano
 
           namespace :slack do
             task :starting do
-              announced_deployer = ActiveSupport::Multibyte::Chars.new(fetch(:deployer)).mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/,'').to_s
+              announced_deployer = fetch(:deployer).to_s
               msg = if fetch(:branch, nil)
                 "#{announced_deployer} is deploying #{fetch(:application)}'s #{branch} to #{fetch(:stage, 'production')}"
               else
