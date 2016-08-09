@@ -38,7 +38,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency(%q<capistrano>)
   s.add_dependency(%q<capistrano-log_with_awesome>, ["~> 0.0.2"])
-  s.add_dependency(%q<activesupport>, [">= 3"])
   s.add_development_dependency(%q<rspec>, [">= 2.5.0"])
   s.add_development_dependency(%q<bundler>, [">= 1.0.9"])
   s.add_development_dependency(%q<jeweler>, ["~> 1.8.0"])
